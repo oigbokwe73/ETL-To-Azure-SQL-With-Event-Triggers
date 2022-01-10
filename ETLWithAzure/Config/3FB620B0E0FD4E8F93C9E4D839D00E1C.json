@@ -1,0 +1,112 @@
+{
+  "Id": "CsvProcess",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "CreateCSVBatchForTraining",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "WriteCsvToStorageAsBatch",
+          "Value": "Yes"
+        },
+        {
+          "Key": "BatchSize",
+          "Value": "10001"
+        },
+        {
+          "Key": "DestinationfolderName",
+          "Value": "BatchedFiles"
+        },
+        {
+          "Key": "FolderName",
+          "Value": "CSVFiles"
+        },
+        {
+          "Key": "TableName",
+          "Value": "csvprocessedfiled"
+        },
+        {
+          "Key": "DestinationContainer",
+          "Value": "processed"
+        },
+        {
+          "Key": "FileExtension",
+          "Value": ".csv"
+        },
+        {
+          "Key": "ContentType",
+          "Value": "csv/text"
+        }
+      ]
+    },
+    {
+      "Key": "Build_Query_To_Retrieved_Processed_CSV_Files",
+      "Type": "Frontierscientific.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "QueryBuilder",
+          "Value": "Yes"
+        },
+        {
+          "Key": "filters",
+          "Value": "[{\"Key\": \"@{StatusCode}\",\"Value\": \"StatusCode\"},{\"Key\": \"@{patitionkey}\",\"Value\": \"CorrelationId\"}]"
+        },
+        {
+          "Key": "statement",
+          "Value": "PartitionKey eq '@{patitionkey}'"
+        }
+      ]
+    },
+    {
+      "Key": "Get_CSV_Parsed_Files_From_Azure_Table",
+      "Type": "Frontierscientific.BPM.Core.Processes.TableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "sdfprocessed"
+        },
+        {
+          "Key": "SimpleTableSearch",
+          "Value": "yes"
+        },
+        {
+          "Key": "QueryField",
+          "Value": "query"
+        },
+        {
+          "Key": "TimeZone",
+          "Value": "Central Standard Time"
+        },
+        {
+          "Key": "DateTime",
+          "Value": "MM/dd/yy H:mm:ss"
+        },
+        {
+          "Key": "ContinueMessage",
+          "Value": "yes"
+        }
+      ]
+    }
+  ]
+}
