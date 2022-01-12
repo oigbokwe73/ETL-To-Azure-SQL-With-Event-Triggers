@@ -1,3 +1,8 @@
+## Architeture Diagram
+
+![image](https://user-images.githubusercontent.com/15838780/149044377-cb0939d4-12c2-48be-8589-2ccd7f11e16a.png)
+
+
 ## Appplication Setting 
 
 |Key|Value | Comment|
@@ -7,6 +12,9 @@
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App. Used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
+|ConnectionString|[CONNECTION_STRING NAME]|Example  "ConnectionString"|
+
+> **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
 
 ## Function App  Configuration 
 
