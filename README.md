@@ -14,6 +14,8 @@
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
 |ConnectionString|[CONNECTION_STRING NAME]|Example  "ConnectionString"|
 
+> **Note:**  Look at the configuration file in the **Config** Folder and created a Table to record information.
+
 ## Function App  Configuration 
 
 > **Note:** The **Configuration** is located in the  FunctionApp  in a **Config** Folder.
