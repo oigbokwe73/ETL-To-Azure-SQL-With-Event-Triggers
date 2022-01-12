@@ -14,3 +14,4 @@
     [NewCoach]        NVARCHAR (MAX) NULL,
     [Tailgating]      NVARCHAR (MAX) NULL
 );
+

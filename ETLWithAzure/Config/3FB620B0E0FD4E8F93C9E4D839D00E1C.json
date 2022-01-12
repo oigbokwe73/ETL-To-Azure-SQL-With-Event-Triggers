@@ -9,26 +9,98 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "CreateCSVBatchForTraining",
-      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
+      "Key": "CreateCSVBatchFilesForProcessing",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BatchDataIngestion",
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "WriteCsvToStorageAsBatch",
           "Value": "Yes"
-        },				
-        {
-          "Key": "DatabaseTableName",
-          "Value": "Training1_11_2022"
         },
         {
-          "Key": "ColumnHeader",
-          "Value": "data,team,time,Opponent,Rank,Site,Result,Attendance,CurrentWins,CurrentLosses,StadiumCapacity,FillRate,NewCoach,Tailgating"
+          "Key": "BatchSize",
+          "Value": "1001"
         },
         {
-          "Key": "ConnectionString",
-          "Value": "ConnectionString"
+          "Key": "FolderName",
+          "Value": "CSVFiles"
+        },
+        {
+          "Key": "TableName",
+          "Value": "csvprocessedfiled"
+        },
+        {
+          "Key": "Container",
+          "Value": "processed"
+        },
+        {
+          "Key": "FileExtension",
+          "Value": ".csv"
+        },
+        {
+          "Key": "ContentType",
+          "Value": "csv/text"
+        }
+      ]
+    },
+    {
+      "Key": "Build_Query_To_Retrieved_Processed_CSV_Files",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "QueryBuilder",
+          "Value": "Yes"
+        },
+        {
+          "Key": "filters",
+          "Value": "[{\"Key\": \"@{StatusCode}\",\"Value\": \"StatusCode\"},{\"Key\": \"@{patitionkey}\",\"Value\": \"CorrelationId\"}]"
+        },
+        {
+          "Key": "statement",
+          "Value": "PartitionKey eq '@{patitionkey}'"
+        }
+      ]
+    },
+    {
+      "Key": "Get_CSV_Parsed_Files_From_Azure_Table",
+      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "csvprocessedfiled"
+        },
+        {
+          "Key": "SimpleTableSearch",
+          "Value": "yes"
+        },
+        {
+          "Key": "QueryField",
+          "Value": "query"
+        },
+        {
+          "Key": "TimeZone",
+          "Value": "Central Standard Time"
+        },
+        {
+          "Key": "DateTime",
+          "Value": "MM/dd/yy H:mm:ss"
+        },
+        {
+          "Key": "ContinueMessage",
+          "Value": "yes"
         }
       ]
     }

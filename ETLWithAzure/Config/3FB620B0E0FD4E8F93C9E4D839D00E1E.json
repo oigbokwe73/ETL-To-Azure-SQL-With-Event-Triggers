@@ -1,5 +1,5 @@
 {
-  "Id": "ConnectToDatabaseForMigration",
+  "Id": "ConnectToDatabaseToSearch",
   "LineOfBusinessProcessData": [
     {
       "Key": "object",
@@ -9,22 +9,22 @@
   "Type": "",
   "DataFlowProcess": [
     {
-      "Key": "ProcessCSVFilesMigrateToDatabase",
+      "Key": "SearchDatabaseForResults",
       "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
       "Async": "false",
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BatchDataIngestion",
+          "Key": "connectodatabase",
           "Value": "Yes"
         },
         {
-          "Key": "DatabaseTableName",
-          "Value": "Training1_11_2022"
+          "Key": "connectionstring",
+          "Value": "ConnectionString"
         },
         {
-          "Key": "ConnectionString",
-          "Value": "ConnectionString"
+          "Key": "messageformat",
+          "Value": "application/json"
         }
       ]
     }
