@@ -1,6 +1,6 @@
 ## Architecture Diagram
 
-![image](https://user-images.githubusercontent.com/15838780/149044377-cb0939d4-12c2-48be-8589-2ccd7f11e16a.png)
+![image](https://user-images.githubusercontent.com/15838780/149241508-67d1d0af-9aea-47e3-abc2-335e891fafdc.png)
 
 
 ## Appplication Setting 
