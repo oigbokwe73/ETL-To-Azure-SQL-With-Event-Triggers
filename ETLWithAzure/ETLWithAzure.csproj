@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AzureFunctionsVersion>v3</AzureFunctionsVersion>
@@ -7,7 +7,14 @@
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.EventGrid" Version="2.1.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.10" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
-    <PackageReference Include="Xenhey.BPM.Core.DotNet" Version="10.0.1" />
+    <PackageReference Include="Xenhey.BPM.Core.DotNet" Version="10.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="SQL\TestTable.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestTable.SQL</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -16,6 +23,10 @@
     <None Update="local.settings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+    <None Update="SQL\TestTable.SQL">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TestTable.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 </Project>

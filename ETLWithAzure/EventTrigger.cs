@@ -12,12 +12,12 @@ namespace ETLWithAzure
     public static class EventTrigger
     {
         [FunctionName("EventTrigger")]
-        public static void Run([BlobTrigger("samples-workitems/{name}", Connection = "")]Stream myBlob, string name, ILogger log)
+        public static void Run([BlobTrigger("processed/{name}", Connection = "AzureWebJobsStorage")]Stream myBlob, string name, ILogger log)
         {
             string ApiKeyName = "x-api-key";
             log.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
-            nvc.Add(ApiKeyName, "B6B6768321C749B5B52380A16DC120AH");
+            nvc.Add(ApiKeyName, "3FB620B0E0FD4E8F93C9E4D839D00E1D");
             IOrchrestatorService orchrestatorService = new ManagedOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(myBlob);
         }

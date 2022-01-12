@@ -24,20 +24,10 @@ namespace ETLWithAzure
             HttpRequest req, ILogger log)
             {
                 _req = req;
-                string ApiKeyName = "x-api-key";
                 log.LogInformation("C# HTTP trigger function processed a request.");
                 var batchFileResults = orchrestatorService.Run(_req.Body);
                 var listBatchFiles = JsonConvert.DeserializeObject<List<dynamic>>(batchFileResults);
-                var ProcesssedFolderName = listBatchFiles[0]["PartitionKey"].ToString();
-                nvc.Remove(ApiKeyName);
-                nvc.Add(ApiKeyName, "B6B6768321C749B5B52380A16DC120AH");
-                var results = orchrestatorService.Run(ProcesssedFolderName);
-                return resultSet(results);
-
-
-
-
-                return resultSet(results);
+                return resultSet(batchFileResults);
 
             }
 

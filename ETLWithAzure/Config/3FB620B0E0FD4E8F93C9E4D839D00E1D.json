@@ -1,0 +1,32 @@
+{
+  "Id": "CsvProcess",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "CreateCSVBatchForTraining",
+      "Type": "Xenhey.BPM.Core.Processes.ConnectToDBProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BatchDataIngestion",
+          "Value": "Yes"
+        },
+        {
+          "Key": "DatabaseTableName",
+          "Value": "Training1_11_2022"
+        },
+        {
+          "Key": "ConnectionString",
+          "Value": "ConnectionString"
+        }
+      ]
+    }
+  ]
+}
