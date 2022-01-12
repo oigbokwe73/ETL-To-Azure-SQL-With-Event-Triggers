@@ -22,8 +22,8 @@
 
 |FileName|Description|
 |:----|:----|
-|43EFE991E8614CFB9EDECF1B0FDED37B.json| Upload Config File|
-|43EFE991E8614CFB9EDECF1B0FDED37C.json| Search Records config File.|
+|3FB620B0E0FD4E8F93C9E4D839D00E1C.json| Upload Config File|
+|3FB620B0E0FD4E8F93C9E4D839D00E1D.json| Search Records config File.|
 
 ## Upload Configuration to Storage
 Go to created storage Account.. Click On "Blob Service" 
