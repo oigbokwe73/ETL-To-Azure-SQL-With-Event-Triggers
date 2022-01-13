@@ -32,7 +32,7 @@
         },
         {
           "Key": "TableName",
-          "Value": "csvprocessedfiled"
+          "Value": "csvbatchfiles"
         },
         {
           "Key": "Container",
@@ -80,7 +80,7 @@
         },
         {
           "Key": "TableName",
-          "Value": "csvprocessedfiled"
+          "Value": "csvbatchfiles"
         },
         {
           "Key": "SimpleTableSearch",
