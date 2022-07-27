@@ -22,8 +22,9 @@
 
 |FileName|Description|
 |:----|:----|
-|3FB620B0E0FD4E8F93C9E4D839D00E1C.json| Upload Config File|
-|3FB620B0E0FD4E8F93C9E4D839D00E1D.json| Search Records config File.|
+|3FB620B0E0FD4E8F93C9E4D839D00E1C.json| Upload CSV File. Create Batched Files. Return Status Check|
+|43EFE991E8614CFB9EDECF1B0FDED37A.json| Upload CSV File into NoSql Table Store Database.|
+|3FB620B0E0FD4E8F93C9E4D839D00E1D.json| Upload Batched files into SQL Database|
 
 ## Upload Configuration to Storage
 Go to created storage Account.. Click On "Blob Service" 
