@@ -8,7 +8,7 @@
 |Key|Value | Comment|
 |:----|:----|:----|
 |AzureWebJobsStorage|[CONNECTION STRING]|RECOMMENDATION :  store in AzureKey Vault.|
-|ConfigurationPath| [CONFIGURATION FOLDER PATH] |Folder is optional
+|FilePath| [d:\home\site\wwwroot\Config\ |
 |ApiKeyName|[API KEY NAME]|Will be passed in the header  :  the file name of the config.
 |AppName| [APPLICATION NAME]| This is the name of the Function App. Used in log analytics|
 |StorageAcctName|[STORAGE ACCOUNT NAME]|Example  "AzureWebJobsStorage"|
