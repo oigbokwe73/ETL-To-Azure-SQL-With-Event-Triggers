@@ -26,15 +26,6 @@
 |43EFE991E8614CFB9EDECF1B0FDED37A.json| Upload CSV File into NoSql Table Store Database.|
 |3FB620B0E0FD4E8F93C9E4D839D00E1D.json| Upload Batched files into SQL Database|
 
-## Upload Configuration to Storage
-Go to created storage Account.. Click On "Blob Service" 
-![image](https://user-images.githubusercontent.com/15838780/147958072-4a6058d2-d320-44a0-9d11-58449d527cd3.png)
-
-Click on **"Container"**
-![image](https://user-images.githubusercontent.com/15838780/147958201-71df0f21-e4e8-46c0-93be-728f1dbc2a43.png)
-![image](https://user-images.githubusercontent.com/15838780/147963170-1a2f2a64-7ba2-44ce-9f5d-30d490529711.png)
-Upload the selected files from the "**Config**" folder in your project
-![image](https://user-images.githubusercontent.com/15838780/147974980-1a86ebd3-4ac1-4122-892a-519171ff9288.png)
 
 
 ## Upload CSV File
@@ -50,16 +41,6 @@ Upload the selected files from the "**Config**" folder in your project
 
 
 
-## Search Record
-
-|Key|Value|Comments|
-|:----|:----|:----|
-|SimpleTableSearch|Yes| Indicates the method in the process to use the API|
-|PartitionKey|<PROPERTY NAME >|OPTIONAL : Identity the  Field/Key in the JSON payload as a Partition Key|
-|QueryField|<SEARCH PROPERTY NAME>|Provide the search property name to be used in the search
-|DefaultResult| <CUSTOM MESSAGE> | OPTIONAL :  No  results return then a default message
-|TableName|<AZURE TABLE NAME>| Create table add records
-|StorageAccount|<STORAGE ACCOUNT KEY>| Name of the  storage account key in AppSettings.|
   
   
   ## Products
@@ -67,16 +48,11 @@ Upload the selected files from the "**Config**" folder in your project
 |products|links|Comments|
 |:----|:----|:----|
 |Azure Getting Started |https://azure.microsoft.com/en-us/free/| Create free account + $200 in Credit|
-|Sample Data Sets|https://www.kaggle.com/datasets| Useful site for pulling sample payload|
 |Azure Storage Explorer|https://azure.microsoft.com/en-us/features/storage-explorer/#features|useful view and query data in azure table storage|
 |Postman|https://www.postman.com/downloads/|Postman supports the Web or Desktop Version|
 |VsCode| https://visualstudio.microsoft.com/downloads/ |  Required extensions. Azure Functions, Azure Account
 |VS Studio Community Edition |https://visualstudio.microsoft.com/downloads/| Recommended. Nice intergration with Azure. software is free.
 
-## bug
-  
-if the  csv has "," in the payload will throw  a "column header error". Only use CSV's without  Commas(",") in the  
-  
   
   ## Contact
   
