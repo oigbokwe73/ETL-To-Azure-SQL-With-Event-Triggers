@@ -15,6 +15,11 @@
 |ConnectionString|[CONNECTION_STRING NAME]|Example  "ConnectionString"|
 
 
+
+## How to install  ACI for SFTP ##
+
+https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sftp-on-azure
+
 ## Function App  Configuration 
 
 
