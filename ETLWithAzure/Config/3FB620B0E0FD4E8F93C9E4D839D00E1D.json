@@ -1,3 +1,4 @@
+
 {
   "Id": "ConnectToDatabaseForMigration",
   "LineOfBusinessProcessData": [
@@ -15,12 +16,12 @@
       "IsEnable": "true",
       "DataFlowProcessParameters": [
         {
-          "Key": "BatchDataIngestion",
+          "Key": "BatchDataIngestionCsvReader",
           "Value": "Yes"
         },
         {
           "Key": "DatabaseTableName",
-          "Value": "Training1_11_2022"
+          "Value": "CollegeInfo"
         },
         {
           "Key": "ConnectionString",

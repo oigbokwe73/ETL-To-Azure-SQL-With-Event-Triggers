@@ -7,7 +7,7 @@
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.EventGrid" Version="2.1.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.10" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.13" />
-    <PackageReference Include="Xenhey.BPM.Core.DotNet" Version="10.0.2" />
+    <PackageReference Include="Xenhey.BPM.Core.DotNet" Version="10.5.6" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="SQL\TestTable.Designer.cs">
@@ -17,6 +17,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Update="Config\3FB620B0E0FD4E8F93C9E4D839D00E1C.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\3FB620B0E0FD4E8F93C9E4D839D00E1D.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\3FB620B0E0FD4E8F93C9E4D839D00E1E.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\43EFE991E8614CFB9EDECF1B0FDED37A.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Config\43EFE991E8614CFB9EDECF1B0FDED37B.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

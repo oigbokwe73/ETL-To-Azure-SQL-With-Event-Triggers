@@ -9,15 +9,15 @@ using Xenhey.BPM.Core.Implementation;
 
 namespace ETLWithAzure
 {
-    public static class EventTrigger
+    public static class EventParser
     {
-        [FunctionName("EventTrigger")]
-        public static void Run([BlobTrigger("processed/{name}", Connection = "AzureWebJobsStorage")]Stream myBlob, string name, ILogger log)
+        [FunctionName("EventParser")]
+        public static void Run([BlobTrigger("pickup/{name}", Connection = "AzureWebJobsStorage")] Stream myBlob, string name, ILogger log)
         {
             string ApiKeyName = "x-api-key";
             log.LogInformation("C# blob trigger function processed a request.");
             NameValueCollection nvc = new NameValueCollection();
-            nvc.Add(ApiKeyName, "3FB620B0E0FD4E8F93C9E4D839D00E1D");
+            nvc.Add(ApiKeyName, "3FB620B0E0FD4E8F93C9E4D839D00E1C");
             IOrchrestatorService orchrestatorService = new LocalOrchestratorService(nvc);
             var processFiles = orchrestatorService.Run(myBlob);
         }

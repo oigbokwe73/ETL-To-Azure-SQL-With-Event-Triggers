@@ -23,10 +23,34 @@
           "Value": "ConnectionString"
         },
         {
+          "Key": "SearchTerm",
+          "Value": "search"
+        },
+        {
+          "Key": "DatabaseTableName",
+          "Value": "CollegeInfo"
+        },        
+        {
           "Key": "messageformat",
           "Value": "application/json"
         }
       ]
-    }
+    },
+    {
+      "Key": "Format-Uploaded-File",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayFromComplexObject",
+          "Value": "Yes"
+        },
+        {
+          "Key": "TableName",
+          "Value": "Table1"
+        }
+      ]
+    },
   ]
 }

@@ -47,62 +47,6 @@
           "Value": "csv/text"
         }
       ]
-    },
-    {
-      "Key": "Build_Query_To_Retrieved_Processed_CSV_Files",
-      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "QueryBuilder",
-          "Value": "Yes"
-        },
-        {
-          "Key": "filters",
-          "Value": "[{\"Key\": \"@{StatusCode}\",\"Value\": \"StatusCode\"},{\"Key\": \"@{patitionkey}\",\"Value\": \"CorrelationId\"}]"
-        },
-        {
-          "Key": "statement",
-          "Value": "PartitionKey eq '@{patitionkey}'"
-        }
-      ]
-    },
-    {
-      "Key": "Get_CSV_Parsed_Files_From_Azure_Table",
-      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
-      "Async": "false",
-      "IsEnable": "true",
-      "DataFlowProcessParameters": [
-        {
-          "Key": "StorageAccount",
-          "Value": "AzureWebJobsStorage"
-        },
-        {
-          "Key": "TableName",
-          "Value": "csvbatchfiles"
-        },
-        {
-          "Key": "SimpleTableSearch",
-          "Value": "yes"
-        },
-        {
-          "Key": "QueryField",
-          "Value": "query"
-        },
-        {
-          "Key": "TimeZone",
-          "Value": "Central Standard Time"
-        },
-        {
-          "Key": "DateTime",
-          "Value": "MM/dd/yy H:mm:ss"
-        },
-        {
-          "Key": "ContinueMessage",
-          "Value": "yes"
-        }
-      ]
     }
   ]
 }

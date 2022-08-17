@@ -1,0 +1,68 @@
+﻿{
+  "Id": "UploadFileToNoSQLTableStorage",
+  "LineOfBusinessProcessData": [
+    {
+      "Key": "object",
+      "Type": "Xenhey.BPM.Core.Processes.ProcessData"
+    }
+  ],
+  "Type": "",
+  "DataFlowProcess": [
+    {
+      "Key": "Read-Uploaded-File",
+      "Type": "Xenhey.BPM.Core.Processes.CSVProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "ReadCsvAsStreamv2",
+          "Value": "yes"
+        },
+        {
+          "Key": "messageformat",
+          "Value": "application/json"
+        }
+      ]
+    },
+    {
+      "Key": "Format-Uploaded-File",
+      "Type": "Xenhey.BPM.Core.Processes.MessageBuilderProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "BuildArrayFromComplexObject",
+          "Value": "Yes"
+        },
+        {
+          "Key": "RootName",
+          "Value": "Table1"
+        }
+      ]
+    },
+    {
+      "Key": "Write-To-Table-Storage",
+      "Type": "Xenhey.BPM.Core.Processes.AzureTableStorageProcess",
+      "Async": "false",
+      "IsEnable": "true",
+      "DataFlowProcessParameters": [
+        {
+          "Key": "CreateRecordForAzureTableBatch",
+          "Value": "yes"
+        },
+        {
+          "Key": "BatchSize",
+          "Value": "100"
+        },
+        {
+          "Key": "StorageAccount",
+          "Value": "AzureWebJobsStorage"
+        },
+        {
+          "Key": "TableName",
+          "Value": "training20220817"
+        }
+      ]
+    }
+  ]
+}

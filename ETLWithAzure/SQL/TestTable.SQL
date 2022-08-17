@@ -1,17 +1,20 @@
-﻿CREATE TABLE [dbo].[Training1_11_2022] (
-    [data]            NVARCHAR (MAX) NULL,
-    [team]            NVARCHAR (MAX) NULL,
-    [time]            NVARCHAR (MAX) NULL,
-    [Opponent]        NVARCHAR (MAX) NULL,
-    [Rank]            NVARCHAR (MAX) NULL,
-    [Site]            NVARCHAR (MAX) NULL,
-    [Result]          NVARCHAR (MAX) NULL,
-    [Attendance]      NVARCHAR (MAX) NULL,
-    [CurrentWins]     NVARCHAR (MAX) NULL,
-    [CurrentLosses]   NVARCHAR (MAX) NULL,
-    [StadiumCapacity] NVARCHAR (MAX) NULL,
-    [FillRate]        NVARCHAR (MAX) NULL,
-    [NewCoach]        NVARCHAR (MAX) NULL,
-    [Tailgating]      NVARCHAR (MAX) NULL
-);
+﻿CREATE TABLE [dbo].[CollegeInfo]
+  (
+     Company     NVARCHAR (MAX) NULL,
+     [Address]   NVARCHAR (MAX) NULL,
+     City        NVARCHAR (MAX) NULL,
+     [State]     NVARCHAR (MAX) NULL,
+     Zip         NVARCHAR (MAX) NULL,
+     County      NVARCHAR (MAX) NULL,
+     Phone       NVARCHAR (MAX) NULL,
+     Website     NVARCHAR (MAX) NULL,
+     Contact     NVARCHAR (MAX) NULL,
+     Title       NVARCHAR (MAX) NULL,
+     DirectPhone NVARCHAR (MAX) NULL,
+     Email       NVARCHAR (MAX) NULL,
+     Sales       NVARCHAR (MAX) NULL,
+     Employees   NVARCHAR (MAX) NULL,
+     SICCode     NVARCHAR (MAX) NULL,
+     Industry    NVARCHAR (MAX) NULL
+  ) 
 

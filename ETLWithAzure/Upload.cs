@@ -26,7 +26,6 @@ namespace ETLWithAzure
                 _req = req;
                 log.LogInformation("C# HTTP trigger function processed a request.");
                 var batchFileResults = orchrestatorService.Run(_req.Body);
-                var listBatchFiles = JsonConvert.DeserializeObject<List<dynamic>>(batchFileResults);
                 return resultSet(batchFileResults);
 
             }
@@ -48,7 +47,7 @@ namespace ETLWithAzure
                     {
                         nvc.Add(item.Key, item.Value.FirstOrDefault());
                     });
-                    return new ManagedOrchestratorService(nvc);
+                    return new LocalOrchestratorService(nvc);
                 }
             }
 
