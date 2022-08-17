@@ -22,9 +22,9 @@ https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sf
 
 
 ## Storage account 
-- Table Name :- csvbatchfiles
-- Containers :- processed, pickup
-- Fileshare :-training[yyyymmdd]
+- **Table Name** :- csvbatchfiles
+- **Containers** :- processed, pickup
+- **Fileshare** :-training[yyyymmdd]
 
 ## Function App  Configuration 
 
