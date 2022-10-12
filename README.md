@@ -15,6 +15,17 @@
 |ConnectionString|[CONNECTION_STRING NAME]|Example  "ConnectionString"|
 
 
+
+## How to install  ACI for SFTP ##
+
+https://docs.microsoft.com/en-us/samples/azure-samples/sftp-creation-template/sftp-on-azure
+
+
+## Storage account 
+- **Table Name** :- csvbatchfiles
+- **Containers** :- processed, pickup
+- **Fileshare** :-training[yyyymmdd]
+
 ## Function App  Configuration 
 
 
